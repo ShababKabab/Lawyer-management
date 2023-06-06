@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Tin Registration{% endblock title %}
+{% block main-content %}
+<html>
+<head>
+	<title>Download Example</title>
+</head>
+<body>
+	<h1>Download Example</h1>
+
+	<p>Here is some sample data:</p>
+	<pre>
+		This is some data that we want to download as an HTML file.
+	</pre>
+
+	<a href="{% url 'download' %}" download="">Download</a>
+
+</body>
+</html>
+{% endblock main-content %}

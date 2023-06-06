@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Tin Registration{% endblock title %}
+{% block main-content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+    {% if searched %}
+        {{searched}}
+        <br/>
+        {% for venue in venues %}
+            <a href="{% url 'product-detail' venue.id %}">{{ venue.title }}</a>
+            <img src="{{venue.lawyer_image.url}}" alt="" class="img-fluid img-thumbnail">
+            <br/>
+        {% endfor %}
+    {% else %}
+        <h1> Didn't Input Anything! </h1>>
+    {% endif %}
+</body>
+</html>
+{% endblock main-content %}

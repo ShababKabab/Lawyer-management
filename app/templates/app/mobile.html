@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Tin Registration{% endblock title %}
+{% block main-content %}
+<!-- apply_tin.html -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" value="submit">Apply TIN</button>
+</form>
+{% endblock main-content %}

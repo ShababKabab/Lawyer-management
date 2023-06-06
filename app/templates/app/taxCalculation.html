@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tax Calculator</title>
+</head>
+<body>
+	<h1>Tax Calculator</h1>
+
+	<form>
+		<label for="income">Enter your annual income:</label><br>
+		<input type="number" id="income" name="income"><br>
+		<label for="tax-rate">Select your tax rate:</label><br>
+		<select id="tax-rate" name="tax-rate">
+			<option value="0.10">10%</option>
+			<option value="0.15">15%</option>
+			<option value="0.20">20%</option>
+			<option value="0.25">25%</option>
+			<option value="0.30">30%</option>
+		</select><br>
+		<input type="button" value="Calculate Tax" onclick="calculateTax()"><br>
+		<label for="tax-amount">Your estimated tax amount:</label><br>
+		<input type="text" id="tax-amount" name="tax-amount" readonly>
+	</form>
+
+	<script>
+		function calculateTax() {
+			let income = document.getElementById("income").value;
+			let taxRate = document.getElementById("tax-rate").value;
+			let taxAmount = income * taxRate;
+			document.getElementById("tax-amount").value = taxAmount.toFixed(2);
+		}
+	</script>
+
+</body>
+</html>
+{% endblock main-content %}
